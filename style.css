@@ -324,7 +324,7 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   position: relative;
   overflow: clip;
-  background: url("../screenshots/bw photo.jpg") center / cover no-repeat fixed;
+  background: url("screenshots/bw photo.jpg") center / cover no-repeat fixed;
 }
 .hero-overlay {
   position: absolute;
