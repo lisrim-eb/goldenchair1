@@ -161,6 +161,38 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxClose = document.getElementById('lightbox-close');
+
+document.querySelectorAll('.sg-item .sg-img').forEach(img => {
+  img.addEventListener('click', () => {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+lightbox.addEventListener('click', () => {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+});
+
+lightboxClose.addEventListener('click', e => {
+  e.stopPropagation();
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+});
+
 // Scroll-triggered fade-in (AOS-lite)
 const aosObserver = new IntersectionObserver(
   entries => {

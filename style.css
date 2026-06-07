@@ -257,6 +257,16 @@ img { max-width: 100%; display: block; }
 }
 .nav-mobile a:hover { color: var(--gold); }
 .nav-mobile .btn-nav { margin-top: 1rem; text-align: center; }
+.nav-mobile .nav-book {
+  color: var(--gold);
+  border: 1px solid rgba(201,168,76,0.4);
+  border-radius: var(--radius);
+  margin: 0.5rem auto 0;
+  width: fit-content;
+  padding: 0.5rem 1.5rem;
+  display: block;
+  text-align: center;
+}
 
 /* =============================================
    SECTION SHARED
@@ -588,7 +598,41 @@ img { max-width: 100%; display: block; }
   gap: 0.85rem;
   margin-top: 0.4rem;
 }
-.sg-item { aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius); }
+/* ---- LIGHTBOX ---- */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+.lightbox.open { display: flex; }
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 0 60px rgba(201,168,76,0.15);
+  pointer-events: none;
+}
+.lightbox-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: rgba(245,240,232,0.7);
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+.lightbox-close:hover { color: var(--gold); }
+
+.sg-item { cursor: zoom-in; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius); }
 .sg-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
 .sg-item:hover .sg-img { transform: scale(1.04); }
 .sg-ph {
@@ -1552,10 +1596,11 @@ img { max-width: 100%; display: block; }
   .marquee-bar { order: 0; }
   .booking { order: 1; }
   .sg-section { order: 2; }
-  .testimonials { order: 3; }
-  .about { order: 4; }
-  .barbers { order: 5; }
-  .contact { order: 6; }
+  .booking-online { order: 3; }
+  .testimonials { order: 4; }
+  .about { order: 5; }
+  .barbers { order: 6; }
+  .contact { order: 7; }
 
   /* Closed row: easier to read on mobile */
   .closed-row { opacity: 0.7; }
