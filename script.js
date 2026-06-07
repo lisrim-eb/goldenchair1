@@ -108,6 +108,7 @@ window.addEventListener('scroll', () => {
 const scrollSections = [
   { id: 'services',      label: 'Our Work'      },
   { id: 'booking',       label: 'Walk In'        },
+  { id: 'book-online',   label: 'Booking'        },
   { id: 'testimonials',  label: 'Testimonials'   },
   { id: 'about',         label: 'About'          },
   { id: 'barbers',       label: 'Our Team'       },
