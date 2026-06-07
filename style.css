@@ -114,6 +114,19 @@ img { max-width: 100%; display: block; }
 }
 .btn-nav:hover { background: var(--gold-light); transform: translateY(-1px); }
 
+.nav-book {
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(201,168,76,0.4);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.nav-book:hover { background: rgba(201,168,76,0.1); border-color: var(--gold); }
+
 .full-width { width: 100%; text-align: center; }
 
 /* =============================================
@@ -1233,6 +1246,39 @@ img { max-width: 100%; display: block; }
 /* =============================================
    CONTACT
 ============================================= */
+.booking-online {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: transparent;
+  position: relative;
+}
+
+.booking-online .section-head {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.booking-online .section-sub {
+  color: rgba(245,240,232,0.5);
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  margin-top: 0.5rem;
+}
+
+.booking-iframe-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  border: 2px solid rgba(201,168,76,0.35);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(201,168,76,0.08);
+  background: #fff;
+}
+
+.booking-iframe-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 700px;
+}
+
 .contact {
   padding: 3.5rem 0 7rem;
   background: transparent;
@@ -1462,6 +1508,9 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 960px) {
+  .booking-iframe-wrap iframe { height: 900px; }
+  .booking-online { padding: clamp(2rem, 4vw, 3rem) 0; }
+
   /* Force true centering on all titles and headings */
   .section-title, .sg-heading, .booking-title, .section-sub,
   .title-ornament, .section-head, .hero-title, .hero-subtitle,
